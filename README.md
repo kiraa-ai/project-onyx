@@ -47,8 +47,6 @@
 
 <img src="docs/demonstration.gif" width="320" alt="Onyx demo — downloading the model and chatting on device">
 
-*Downloading the model and chatting, recorded on device — [watch the full-quality video](docs/demonstration.mp4).*
-
 </div>
 
 ---
