@@ -117,7 +117,7 @@ struct ChatView: View {
                     }
                 }
             }
-            .font(.system(size: messageFontSize, weight: .bold, design: .monospaced))
+            .font(.system(size: messageFontSize, weight: .bold))
         }
     }
 
