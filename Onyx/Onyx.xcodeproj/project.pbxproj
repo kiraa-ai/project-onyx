@@ -309,7 +309,7 @@
 				CODE_SIGN_ENTITLEMENTS = Onyx/Onyx.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VVH38B9225;
+				DEVELOPMENT_TEAM = HU5YQ67DFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Onyx/Info.plist;
@@ -325,7 +325,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = kiraa.Onyx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oldjewel.kiraa.Onyx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -345,7 +345,7 @@
 				CODE_SIGN_ENTITLEMENTS = Onyx/Onyx.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VVH38B9225;
+				DEVELOPMENT_TEAM = HU5YQ67DFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Onyx/Info.plist;
@@ -361,7 +361,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = kiraa.Onyx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oldjewel.kiraa.Onyx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -636,7 +636,6 @@
 				minimumVersion = 1.3.0;
 			};
 		};
-
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */

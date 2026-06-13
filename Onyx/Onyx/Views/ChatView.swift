@@ -73,6 +73,8 @@ struct ChatView: View {
     /// The ID of the in-progress assistant message, used to scroll to it.
     @State private var streamingMessageId: UUID? = nil
 
+    @AppStorage("messageFontSize") private var messageFontSize: Double = 32
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -115,6 +117,7 @@ struct ChatView: View {
                     }
                 }
             }
+            .font(.system(size: messageFontSize, weight: .bold, design: .monospaced))
         }
     }
 
@@ -212,6 +215,11 @@ struct ChatView: View {
         ToolbarItem(placement: .topBarLeading) {
             modelPickerMenu
         }
+        
+        ToolbarItemGroup {
+            viewMenu
+        }
+        
         // Status dot + clear button (right side).
         ToolbarItemGroup(placement: .topBarTrailing) {
             statusDot
@@ -278,6 +286,19 @@ struct ChatView: View {
             .accessibilityLabel("Status: \(modelStatus)")
     }
 
+    @ViewBuilder
+    private var viewMenu: some View {
+        ControlGroup {
+            Button("Decrease Font Size", systemImage: "minus") {
+                messageFontSize -= 1
+            }
+
+            Button("Increase Font Size", systemImage: "plus") {
+                messageFontSize += 1
+            }
+        }
+    }
+    
     private var statusColor: Color {
         if provider.isGenerating { return .green }
         if modelStatus.starts(with: "Error") { return .red }
