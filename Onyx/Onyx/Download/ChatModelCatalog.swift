@@ -27,12 +27,15 @@ import Foundation
 /// any family-specific formatting automatically.
 public enum ChatModelFamily: String, Sendable, Codable, CaseIterable {
     case llama
-    // TODO: Extend to other families (e.g. Qwen, Gemma, …)
+    case qwen
+    case gemma
     case other
 
     public var symbolName: String {
         switch self {
         case .llama: return "l.circle.fill"
+        case .qwen: return "q.circle.fill"
+        case .gemma:return "g.circle.fill"
         case .other: return "cpu"
         }
     }
@@ -118,9 +121,9 @@ public enum ChatModelCatalog {
             summary: "LiquidAI model."
         ),
         ChatModelDescriptor(
-            id: "usermma/VibeThinker-3B-mlx-4bit",
+            id: "mlx-community/VibeThinker-3B-4bit",
             displayName: "VibeThinker 3B (4-bit)",
-            family: .other,
+            family: .qwen,
             approxSizeBytes: Int64(2 * 1_073_741_824),   // ≈ 2 GB
             filePatterns: defaultFilePatterns,
             summary: "WeiboAI compact model, based on Qwen2.5-Coder."
@@ -128,7 +131,7 @@ public enum ChatModelCatalog {
         ChatModelDescriptor(
             id: "lmstudio-community/Qwen3.5-4B-MLX-4bit",
             displayName: "Qwen 3.5 4B (4-bit)",
-            family: .other,
+            family: .qwen,
             approxSizeBytes: Int64(3.1 * 1_073_741_824),   // ≈ 3.1 GB
             filePatterns: defaultFilePatterns,
             summary: "Qwen compact model."
