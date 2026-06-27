@@ -27,6 +27,7 @@ import Foundation
 /// any family-specific formatting automatically.
 public enum ChatModelFamily: String, Sendable, Codable, CaseIterable {
     case llama
+    // TODO: Extend to other families (e.g. Qwen, Gemma, …)
     case other
 
     public var symbolName: String {
@@ -87,6 +88,7 @@ public enum ChatModelCatalog {
         "*.json",
         "*.safetensors",
         "*.txt",
+        "*.jinja",
         "tokenizer.model"
     ]
 
@@ -107,7 +109,31 @@ public enum ChatModelCatalog {
             filePatterns: defaultFilePatterns,
             summary: "Meta's compact on-device model. Under 1 GB — fast load times."
         ),
-    ]
+        ChatModelDescriptor(
+            id: "LiquidAI/LFM2.5-1.2B-Instruct-MLX-4bit",
+            displayName: "LFM 2.5 1.2B (4-bit)",
+            family: .other,
+            approxSizeBytes: Int64(0.7 * 1_073_741_824),   // ≈ 700 MB
+            filePatterns: defaultFilePatterns,
+            summary: "LiquidAI model."
+        ),
+        ChatModelDescriptor(
+            id: "usermma/VibeThinker-3B-mlx-4bit",
+            displayName: "VibeThinker 3B (4-bit)",
+            family: .other,
+            approxSizeBytes: Int64(2 * 1_073_741_824),   // ≈ 2 GB
+            filePatterns: defaultFilePatterns,
+            summary: "WeiboAI compact model, based on Qwen2.5-Coder."
+        ),
+        ChatModelDescriptor(
+            id: "lmstudio-community/Qwen3.5-4B-MLX-4bit",
+            displayName: "Qwen 3.5 4B (4-bit)",
+            family: .other,
+            approxSizeBytes: Int64(3.1 * 1_073_741_824),   // ≈ 3.1 GB
+            filePatterns: defaultFilePatterns,
+            summary: "Qwen compact model."
+        ),
+   ]
     // swiftlint:enable line_length
 
     /// Look up a descriptor by its HuggingFace id.
